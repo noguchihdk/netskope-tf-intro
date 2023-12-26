@@ -18,3 +18,11 @@ variable "associate_public_ip_address" {
   type = bool
   default = false
 }
+
+variable "aws_access_key" {
+  type = string
+}
+
+variable "aws_secret_key" {
+  type = string
+}
