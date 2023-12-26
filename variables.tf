@@ -16,7 +16,6 @@ variable "aws_sg_id" {
 
 variable "associate_public_ip_address" {
   type = bool
-  default = false
 }
 
 variable "aws_access_key" {
