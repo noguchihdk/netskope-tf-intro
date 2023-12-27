@@ -14,7 +14,7 @@ provider "netskope" {
 
 // Publisher (NS console)
 resource "netskope_publishers" "Publisher" {
-    name = var.publisher_name
+    name = "Example-Publisher"
 }
 
 // output for debug
@@ -52,6 +52,7 @@ provider "aws" {
 // Netskope Publiser AWS Module
 module "publisher-aws" {
   source = "netskopeoss/publisher-aws/netskope"
+  version = "0.1.3"
 
   publisher_name              = var.publisher_name
   aws_key_name                = var.aws_key_name
