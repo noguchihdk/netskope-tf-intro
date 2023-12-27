@@ -29,3 +29,7 @@ variable "aws_secret_key" {
 variable "apitoken" {
   type = string
 }
+
+variable "ssm-iam-role" {
+  type = string
+}
