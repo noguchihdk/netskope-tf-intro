@@ -25,3 +25,7 @@ variable "aws_access_key" {
 variable "aws_secret_key" {
   type = string
 }
+
+variable "apitoken" {
+  type = string
+}

@@ -1,7 +1,7 @@
 terraform {
   required_providers {
     netskope = {
-      version = "0.2.1"
+      version = "0.2.6"
       source = "netskopeoss/netskope"
     }
   }
@@ -9,14 +9,15 @@ terraform {
 
 provider "netskope" {
     baseurl = "https://nttdbxo.goskope.com"
-    apitoken = "0f59fe669606933edd753e34918785b1"
+    apitoken = var.apitoken
   }
 
 // Publisher (NS console)
 resource "netskope_publishers" "Publisher" {
-    name = "Example-Publisher"
+    name = var.publisher_name
 }
 
+// output for debug
 output "publisher_details" {
     value = {
             name  = "${netskope_publishers.Publisher.name}"
@@ -41,13 +42,14 @@ resource "netskope_privateapps" "PrivateApp" {
 
 }
 
-// aws region
+// AWS Provider
 provider "aws" {
   region = "ap-northeast-1"
   access_key = var.aws_access_key
   secret_key = var.aws_secret_key
 }
 
+// Netskope Publiser AWS Module
 module "publisher-aws" {
   source = "netskopeoss/publisher-aws/netskope"
 
@@ -56,8 +58,5 @@ module "publisher-aws" {
   aws_subnet                  = var.aws_subnet_id
   aws_security_group          = var.aws_sg_id
   associate_public_ip_address = var.associate_public_ip_address
-
-
-
 }
 
