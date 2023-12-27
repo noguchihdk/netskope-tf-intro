@@ -40,7 +40,7 @@ provider "netskope" {
 //    publisher_name = netskope_publishers.Publisher.name
 //  }
 
-/}
+// }
 
 // AWS Provider
 provider "aws" {
