@@ -13,9 +13,9 @@ provider "netskope" {
   }
 
 // Publisher (NS console)
-resource "netskope_publishers" "Publisher" {
-    name = "Example-Publisher"
-}
+//resource "netskope_publishers" "Publisher" {
+//    name = "Example-Publisher"
+//}
 
 // output for debug
 output "publisher_details" {
