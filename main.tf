@@ -18,29 +18,29 @@ provider "netskope" {
 //}
 
 // output for debug
-output "publisher_details" {
-    value = {
-            name  = "${netskope_publishers.Publisher.name}"
-            token ="${netskope_publishers.Publisher.token}"
-    }
-}
+//output "publisher_details" {
+//    value = {
+//            name  = "${netskope_publishers.Publisher.name}"
+//            token ="${netskope_publishers.Publisher.token}"
+//    }
+//}
 
 // PrivateApp (NS console)
-resource "netskope_privateapps" "PrivateApp" {
-  app_name = "Example-Private-App"
-  host = "site.examble.internal"
+//resource "netskope_privateapps" "PrivateApp" {
+//  app_name = "Example-Private-App"
+//  host = "site.examble.internal"
+//
+//  protocols {
+//    type = "tcp"
+//    port = "22,443,8080-8081"
+//  }
 
-  protocols {
-    type = "tcp"
-    port = "22,443,8080-8081"
-  }
+//  publisher {
+//    publisher_id = netskope_publishers.Publisher.id
+//    publisher_name = netskope_publishers.Publisher.name
+//  }
 
-  publisher {
-    publisher_id = netskope_publishers.Publisher.id
-    publisher_name = netskope_publishers.Publisher.name
-  }
-
-}
+/}
 
 // AWS Provider
 provider "aws" {
