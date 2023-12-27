@@ -36,8 +36,8 @@ resource "netskope_privateapps" "PrivateApp" {
   }
 
   publisher {
-    publisher_id = netskope_publishers.Publisher.id
-    publisher_name = netskope_publishers.Publisher.name
+    publisher_id = "154"
+    publisher_name = "Example-Publisher"
   }
 
 }
