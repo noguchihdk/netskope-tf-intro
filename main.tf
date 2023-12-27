@@ -12,19 +12,6 @@ provider "netskope" {
     apitoken = var.apitoken
   }
 
-// Publisher (NS console)
-//resource "netskope_publishers" "Publisher" {
-//    name = "Example-Publisher"
-//}
-
-// output for debug
-//output "publisher_details" {
-//    value = {
-//            name  = "${netskope_publishers.Publisher.name}"
-//            token ="${netskope_publishers.Publisher.token}"
-//    }
-//}
-
 // PrivateApp (NS console)
 resource "netskope_privateapps" "PrivateApp" {
   app_name = "Example-Private-App"
