@@ -36,8 +36,8 @@ resource "netskope_privateapps" "PrivateApp" {
   }
 
   publisher {
-    publisher_id = "154"
-    publisher_name = "Example-Publisher"
+    publisher_id = module.publisher-aws.publisher_id
+    publisher_name = module.publisher-aws.publisher_name
   }
 
 }
@@ -61,5 +61,6 @@ module "publisher-aws" {
   associate_public_ip_address = var.associate_public_ip_address
   iam_instance_profile        = var.ssm-iam-role
   use_ssm                     = true
+
 }
 
